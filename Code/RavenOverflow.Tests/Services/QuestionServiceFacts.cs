@@ -17,7 +17,7 @@ namespace RavenOverflow.Tests.Services
         public void GivenAnQuestionWithInvalidData_Create_StoresAQuestion()
         {
             // Arrange.
-            Question question = FakeQuestions.CreateAFakeQuestion(null, null); // No user created this question.
+            Question question = new Question(); // Empty, invalid question
             var documentSession = new Mock<IDocumentSession>();
             IQuestionService questionService = new QuestionService(documentSession.Object);
 
